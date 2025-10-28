@@ -4,11 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MyMusic"
-    Title="MyMusic">
+    Title="MyMusic"
+    BackgroundColor="#6EC8C9"
+    >
+
+    <Shell.TitleView>
+        <Label Text="MyMusic" FontSize="35" FontFamily="HoltwoodOneSC" FontAttributes="Bold" Padding="0, 0, 0, 0" />
+    </Shell.TitleView>
 
     <ShellContent
-        Title="Home"
+        Title="MyMusic"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"
+        />
 
 </Shell>

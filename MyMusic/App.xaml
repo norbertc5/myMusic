@@ -9,6 +9,39 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Border" x:Key="SongBox">
+                <Setter Property="BackgroundColor" Value="Red"></Setter>
+                <Setter Property="MaximumWidthRequest" Value="400"></Setter>
+                <Setter Property="MaximumHeightRequest" Value="85"></Setter>
+                <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"></Setter>
+                <Setter Property="Padding" Value="10, 10, 0, 10"></Setter>
+                <Setter Property="Margin" Value="0, 0, 0, 2"></Setter>
+                <Setter Property="BackgroundColor" Value="#007369"></Setter>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SongBoxText">
+                <Setter Property="FontSize" Value="25"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SongBoxArtist">
+                <Setter Property="FontSize" Value="15"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="Padding" Value="20, 0, 0, 0"></Setter>
+            </Style>
+
+            <Style TargetType="ImageButton" x:Key="SongBoxButtons">
+                <Setter Property="Scale" Value="0.6"></Setter>
+            </Style>
+
+            <Style TargetType="Button" x:Key="AllLikedButtons">
+                <Setter Property="BackgroundColor" Value="#6EC8C9"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+            </Style>
+
         </ResourceDictionary>
+
+
     </Application.Resources>
 </Application>
