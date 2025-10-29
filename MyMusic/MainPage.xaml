@@ -62,6 +62,7 @@
                 <Label Style="{StaticResource SongBoxArtist}" Padding="0" HorizontalOptions="Center">by sample artist</Label>
                 <Slider Style="{StaticResource DurationSlider}" Maximum="100" Minimum="0"></Slider>
                 <Label Style="{StaticResource SongBoxArtist}" HorizontalOptions="Center" Padding="250, 0, 0, 0">2:00 / 4:00</Label>
+                
             </VerticalStackLayout>
         </Border>
     </Grid>
