@@ -38,6 +38,21 @@
             <Style TargetType="Button" x:Key="AllLikedButtons">
                 <Setter Property="BackgroundColor" Value="#6EC8C9"></Setter>
                 <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+            </Style>
+
+            <Style TargetType="Border" x:Key="CurrentSongBox">
+                <Setter Property="BackgroundColor" Value="#005A5B"></Setter>
+                <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"></Setter>
+            </Style>
+
+            <Style TargetType="Slider" x:Key="DurationSlider">
+                <Setter Property="WidthRequest" Value="350"></Setter>
+                <Setter Property="Margin" Value="0, 0, 0, 0"></Setter>
+                <Setter Property="HeightRequest" Value="10"></Setter>
+                <Setter Property="MinimumTrackColor" Value="#008C72"></Setter>
+                <Setter Property="MaximumTrackColor" Value="#02A676"></Setter>
+                <Setter Property="ThumbColor" Value="#FF8181"></Setter>
             </Style>
 
         </ResourceDictionary>

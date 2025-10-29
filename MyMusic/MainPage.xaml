@@ -4,51 +4,68 @@
              x:Class="MyMusic.MainPage"
              BackgroundColor="#6EC8C9">
 
-    <ScrollView>
-        <VerticalStackLayout>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.49*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.008*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.49*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+    <Grid>
 
-                <Button Grid.Column="0" Text="All" Style="{StaticResource AllLikedButtons}"></Button>
-                <Rectangle Grid.Column="1" BackgroundColor="Black"></Rectangle>
-                <Button Grid.Column="2" Text="Liked" Style="{StaticResource AllLikedButtons}"></Button>
-            </Grid>
-            <CollectionView x:Name="playlist">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border Style="{StaticResource SongBox}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>    
-                                </Grid.RowDefinitions>
-                                
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="0.6*"></ColumnDefinition>
-                                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
-                                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
-                                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                
-                                <VerticalStackLayout Grid.Column="0">
-                                    <Label Text="{Binding .}" Style="{StaticResource SongBoxText}"></Label>
-                                    <Label Text="by sample artist" Style="{StaticResource SongBoxArtist}"></Label>
-                                </VerticalStackLayout>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.49*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.008*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.49*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                                <ImageButton Grid.Column="1" Source="trash.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
-                                <ImageButton Grid.Column="2" Source="heart.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
-                                <ImageButton Grid.Column="3" Source="playcircle.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
-    </ScrollView>
-    
+                    <Button Grid.Column="0" Text="All (6)" Style="{StaticResource AllLikedButtons}"></Button>
+                    <Rectangle Grid.Column="1" BackgroundColor="Black"></Rectangle>
+                    <Button Grid.Column="2" Text="Liked (2)" Style="{StaticResource AllLikedButtons}"></Button>
+                </Grid>
+                <CollectionView x:Name="playlist">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource SongBox}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <VerticalStackLayout Grid.Column="0">
+                                        <Label Text="{Binding .}" Style="{StaticResource SongBoxText}"></Label>
+                                        <Label Text="by sample artist" Style="{StaticResource SongBoxArtist}"></Label>
+                                    </VerticalStackLayout>
+
+                                    <ImageButton Grid.Column="1" Source="trash.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
+                                    <ImageButton Grid.Column="2" Source="heart.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
+                                    <ImageButton Grid.Column="3" Source="playcircle.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Border Grid.Row="1" Style="{StaticResource CurrentSongBox}">
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Style="{StaticResource SongBoxText}" HorizontalOptions="Center">Currently playing song</Label>
+                <Label Style="{StaticResource SongBoxArtist}" Padding="0" HorizontalOptions="Center">by sample artist</Label>
+                <Slider Style="{StaticResource DurationSlider}" Maximum="100" Minimum="0"></Slider>
+                <Label Style="{StaticResource SongBoxArtist}" HorizontalOptions="Center" Padding="250, 0, 0, 0">2:00 / 4:00</Label>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add music" />
     </ContentPage.ToolbarItems>
