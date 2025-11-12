@@ -62,7 +62,26 @@
                 <Label Style="{StaticResource SongBoxArtist}" Padding="0" HorizontalOptions="Center">by sample artist</Label>
                 <Slider Style="{StaticResource DurationSlider}" Maximum="100" Minimum="0"></Slider>
                 <Label Style="{StaticResource SongBoxArtist}" HorizontalOptions="Center" Padding="250, 0, 0, 0">2:00 / 4:00</Label>
-                
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                    <ImageButton Grid.Column="0" Source="heart.png" Style="{StaticResource PlayBoxButtons}" MaximumHeightRequest="30"></ImageButton>
+                    <ImageButton Grid.Column="1" Source="skip_next.png" Style="{StaticResource PlayBoxButtons}" ScaleX="-1"></ImageButton>
+                    <ImageButton Grid.Column="2" Source="playcircle.png" Style="{StaticResource PlayBoxButtons}"></ImageButton>
+                    <ImageButton Grid.Column="3" Source="skip_next.png" Style="{StaticResource PlayBoxButtons}"></ImageButton>
+                </Grid>
+                <HorizontalStackLayout HorizontalOptions="Center" Margin="0" Padding="0" >
+                </HorizontalStackLayout>
             </VerticalStackLayout>
         </Border>
     </Grid>
