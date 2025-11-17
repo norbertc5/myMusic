@@ -46,8 +46,10 @@
                                     </VerticalStackLayout>
 
                                     <ImageButton Grid.Column="1" Source="trash.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
-                                    <ImageButton Grid.Column="2" Source="heart.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
-                                    <ImageButton Grid.Column="3" Source="playcircle.png" Style="{StaticResource SongBoxButtons}"></ImageButton>
+                                    <ImageButton Grid.Column="2" Source="heart.png" Style="{StaticResource SongBoxButtons}" Clicked="Like_Clicked"></ImageButton>
+                                    <ImageButton Grid.Column="3" Source="playcircle.png" Style="{StaticResource SongBoxButtons}"
+                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.PlaySongCommand}"
+                                                 CommandParameter="{Binding}"></ImageButton>
                                 </Grid>
                             </Border>
                         </DataTemplate>
@@ -69,12 +71,13 @@
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    
+
                     <ImageButton Grid.Column="0" Source="heart.png" Style="{StaticResource PlayBoxButtons}" MaximumHeightRequest="30"></ImageButton>
                     <ImageButton Grid.Column="1" Source="skip_next.png" Style="{StaticResource PlayBoxButtons}" ScaleX="-1"></ImageButton>
                     <ImageButton Grid.Column="2" Source="playcircle.png" Style="{StaticResource PlayBoxButtons}"></ImageButton>
